@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'registrations/welcome'
+
   root 'welcome#index'
 
   get 'welcome/about'
