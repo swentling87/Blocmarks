@@ -53,14 +53,5 @@ class TopicsController < ApplicationController
   def topic_params
     params.require(:topic).permit(:title)
   end
-
-  def title_caps(string)
-      split_string = string.split
-      split_array = Array.new
-      split_string.each do |x|
-        x.capitalize!
-        split_array << x
-      end
-      return split_array.join(" ")
-    end
+  
 end

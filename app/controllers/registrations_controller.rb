@@ -1,11 +1,9 @@
 class RegistrationsController < Devise::RegistrationsController
+
   protected
 
-  def after_inactive_sign_up_path_for(resource)
-    registrations_welcome_path
-  end
-
-  def welcome
+  def after_sign_up_path_for(resource)
+    welcome_after_sign_up_path
   end
 
 end
