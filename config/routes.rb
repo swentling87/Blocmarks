@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :topics
+
+  get 'registrations/welcome'
+
   root 'welcome#index'
 
   get 'welcome/about'

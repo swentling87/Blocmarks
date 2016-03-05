@@ -10,17 +10,11 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+
  *= require_self
  */
  // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
  @import "bootstrap-sprockets";
  @import "bootstrap";
-
-.nav {
-  margin-top: 10px;
-}
-
-.li {
-  padding-left: 5px;
-}
+ @import "blocmarks";
+ @import "topics";
