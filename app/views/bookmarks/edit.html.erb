@@ -9,13 +9,13 @@
     </ul>
   </div>
   <div class="col-md-8">
-    <%= form_for [@topic, @bookmark] do |f| %>
+    <%= form_for [@bookmark.topic, @bookmark] do |f| %>
     <div class="form-group">
       <%= f.label :Url %>
       <%= f.text_field :url, class: 'form-control', placeholder: "Enter the URL" %>
     </div>
     <%= f.submit "Save", class: 'btn btn-success' %>
-    <%= link_to "Back", topic_path(@topic), class: "btn btn-primary" %>
+    <%= link_to "Back", topic_path(@bookmark.topic), class: "btn btn-primary" %>
      <% end %>
    </div>
  </div>

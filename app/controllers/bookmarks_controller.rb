@@ -26,21 +26,23 @@ class BookmarksController < ApplicationController
   end
 
   def update
+    @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.find(params[:id])
     @bookmark.assign_attributes(bookmark_params)
 
     if @bookmark.save
-      redirect_to @bookmark.topic
+      redirect_to topic_path(@topic)
     else
       redirect_to @bookmark.topic
     end
   end
 
   def destroy
+    @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.find(params[:id])
 
     if @bookmark.destroy
-      redirect_to @bookmark.topic
+      redirect_to topic_path(@topic)
     else
       redirect_to @bookmark.topic
     end
