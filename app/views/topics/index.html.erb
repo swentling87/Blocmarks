@@ -12,9 +12,13 @@
             <%= link_to "Delete Topic", topic, method: :delete, data: { confirm: 'Are you sure you want to delete this topic?'} %>
           </small>
         </h4>
-        <ul>
-          <li><%= topic.bookmarks.all %></li>
+          <% topic.bookmarks.each do |link| %>
+          <ul>
+            <li class="thumbnail">
+              <%= link_to link.url, topic_bookmark_path(link.topic, link) %>
+            </li>
           </ul>
+            <% end %>
       </div>
     </div>
     <% end %>

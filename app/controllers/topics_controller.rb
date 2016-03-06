@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  include TopicsHelper
+
   before_action :authenticate_user!
   def index
     @topics = Topic.all
@@ -53,5 +53,5 @@ class TopicsController < ApplicationController
   def topic_params
     params.require(:topic).permit(:title)
   end
-  
+
 end
