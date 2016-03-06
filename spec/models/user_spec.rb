@@ -15,14 +15,4 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe "login user" do
-    before(:each) do
-      @user = FactoryGirl.create(:user)
-      sign_in :user, @user
-    end
-    it "should show a user is logged in" do
-      expect(session[:user_id]).to eq @user.id
-    end
-  end
-
 end
