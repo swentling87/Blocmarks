@@ -17,8 +17,10 @@ class TopicsController < ApplicationController
     @topic = Topic.new(topic_params)
 
     if @topic.save
+      flash[:notice] = "Topic was created."
       redirect_to @topic
     else
+      flash.now[:alert] = "There was an error creating the topic. Please try again."
       render :new
     end
   end
@@ -32,8 +34,10 @@ class TopicsController < ApplicationController
     @topic.assign_attributes(topic_params)
 
     if @topic.save
+      flash[:notice] = "Topic was updated."
       redirect_to @topic
     else
+      flash.now[:alert] = "There was an error updating the topic. Please try again."
       render :edit
     end
   end
@@ -42,8 +46,10 @@ class TopicsController < ApplicationController
      @topic = Topic.find(params[:id])
 
      if @topic.destroy
+       flash[:notice] = "Topic was deleted."
        redirect_to action: :index
      else
+       flash.now[:alert] = "There was an error deleting the topic. Please try again."
        render :show
      end
    end
