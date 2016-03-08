@@ -15,8 +15,12 @@
           <li class="thumbnail">
             <%= link_to link.url, topic_bookmark_path(link.topic, link) %>
             <div>
-              <%= link_to "Edit Bookmark", edit_topic_bookmark_path(link.topic, link), class: "btn btn-warning btn-xs" %>
-              <%= link_to "Delete Bookmark", [link.topic, link], method: :delete, class: 'btn btn-danger btn-xs', data: {confirm: 'Are you sure you want to delete this bookmark?'} %>
+              <% if policy(link).edit? %>
+                <%= link_to "Edit Bookmark", edit_topic_bookmark_path(link.topic, link), class: "btn btn-warning btn-xs" %>
+              <% end %>
+              <% if policy(link).destroy? %>
+                <%= link_to "Delete Bookmark", [link.topic, link], method: :delete, class: 'btn btn-danger btn-xs', data: {confirm: 'Are you sure you want to delete this bookmark?'} %>
+              <% end %>
             </div>
           </li>
           </ul>

@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.action_mailer.default_url_options = { host: 'tranquil-oasis-88742.herokuapp.com', port: 2525 }
+  config.action_mailer.default_url_options = { host: 'tranquil-oasis-88742.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :user_name => '49704d51c00881',
