@@ -8,8 +8,9 @@ group :production do
   gem 'rails_12factor'
 end
 
-group :development do
+group :development, :test do
   gem 'sqlite3'
+  gem 'pry'
 end
 
 gem 'sass-rails', '~> 5.0'
@@ -19,7 +20,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap-sass'
 gem 'figaro'
-gem 'pry'
 gem 'devise'
 gem 'pundit'
 

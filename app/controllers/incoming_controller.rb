@@ -8,18 +8,14 @@ class IncomingController < ApplicationController
 
     if @user.nil?
       @user = User.create!(email: params[:sender], password: Devise.friendly_token.first(8), password_confirmation:  Devise.friendly_token.first(8))
-    else
-      @user
     end
 
     if @topic.nil?
       @topic = Topic.new(params[:subject])
       @topic.save
-      @bookmark.save
-    else
-      @bookmark.save
     end
-
+    
+    @bookmark.save
     head 200
   end
 end
