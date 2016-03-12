@@ -14,6 +14,7 @@
         <ul>
           <li class="thumbnail">
             <%= link_to link.url, topic_bookmark_path(link.topic, link) %>
+            <%= render partial: 'likes/like', locals: { bookmark: link } %>
             <div>
               <% if policy(link).edit? %>
                 <%= link_to "Edit Bookmark", edit_topic_bookmark_path(link.topic, link), class: "btn btn-warning btn-xs" %>
