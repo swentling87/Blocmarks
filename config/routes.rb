@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'users/show'
+
   get 'likes/index'
 
   get 'incoming/create'
@@ -19,6 +21,7 @@ Rails.application.routes.draw do
   get 'welcome/after_sign_up'
 
   devise_for :users, controllers: { registrations: "registrations" }
+  resources :users, only: [:show]
 
   post :incoming, to: 'incoming#create'
 

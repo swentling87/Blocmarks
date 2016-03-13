@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
       likes.where(bookmark_id: bookmark.id).first
     end
   end
+
+  def liked_bookmarks
+    likes.includes( bookmark: :topic ).map(&:bookmark)
+  end
 end

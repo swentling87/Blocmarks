@@ -8,6 +8,7 @@
   <h1><%= @bookmark.url %></h1>
   <div>
     <%= render partial: 'likes/like', locals: { bookmark: @bookmark } %>
-    <%= link_to "Back", topic_path(@bookmark.topic), class: 'btn btn-primary' %>
+    <%= link_to "Return to All", topics_path, class: 'btn btn-primary' %>
+    <%= link_to "Return to Topic", topic_path(@bookmark.topic), class: 'btn btn-primary' %>
   </div>
 </div>
