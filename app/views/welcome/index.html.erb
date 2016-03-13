@@ -2,7 +2,7 @@
 <div class="jumbotron">
   <p>Feel free to create a free account and explore the world of Blocmarks.</p>
   <% if user_signed_in? %>
-  <%= link_to "My Blocmarks", root_path, class: 'btn btn-primary btn-lg' %>
+  <%= link_to "My Blocmarks", users_show_path, class: 'btn btn-primary btn-lg' %>
   <%= link_to "All Blocmarks", topics_path, class: 'btn btn-primary btn-lg' %>
   <% else %>
   <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-success btn-lg' %>
