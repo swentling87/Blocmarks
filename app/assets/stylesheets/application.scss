@@ -17,6 +17,7 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "blocmarks";
+
  .alert-error {
      background-color: #f2dede;
      border-color: #eed3d7;
@@ -43,4 +44,25 @@
      border-color: #d6e9c6;
      color: #468847;
      text-align: left;
+  }
+
+  .thumbnail  {
+    min-width: 175px;
+    min-height: 250px;
+    width: auto;
+    height: auto;
+    display: inline-block;
+    padding: 25px 25px 25px 25px;
+    background-color: #ecf2f9;
+    float: left;
+    margin: 0 5px 10px 5px;
+  }
+
+  .favicon {
+    width: 75px;
+    height: 75px;
+  }
+
+  .description {
+    max-width: 250px;
   }
