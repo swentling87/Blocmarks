@@ -7,13 +7,14 @@
    </small>
 </h1>
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-12">
     <div class="media">
       <div class="media-body">
         <% @topic.bookmarks.each do |link| %>
         <ul>
           <li class="thumbnail">
-            <%= link_to link.url, topic_bookmark_path(link.topic, link) %>
+            <%= link_to image_tag(display("http://#{link.url}"), class: "favicon"), topic_bookmark_path(link.topic, link)  %>
+            <%= link_to title("#{link.url}"), topic_bookmark_path(link.topic, link) %>
             <%= render partial: 'likes/like', locals: { bookmark: link } %>
             <div>
               <% if policy(link).edit? %>
