@@ -23,6 +23,7 @@ gem 'figaro'
 gem 'devise'
 gem 'pundit'
 gem 'embedly'
+gem 'haml'
 
 group :development, :test do
   gem 'byebug'
