@@ -1,0 +1,16 @@
+%h1 Welcome to: Blocmarks!
+.jumbotron
+  %p Feel free to create a free account and explore the world of Blocmarks.
+  - if user_signed_in?
+    =link_to "My Blocmarks", users_show_path, class: 'btn btn-primary btn-lg'
+    =link_to "All Blocmarks", topics_path, class: 'btn btn-primary btn-lg'
+  - else
+    =link_to "Sign Up", new_user_registration_path, class: 'btn btn-success btn-lg'
+    =link_to "Sign In", new_user_session_path, class: 'btn btn-primary btn-lg'
+.row
+  .col-md-4
+    %h4 Bookmark URLs via email.
+  .col-md-4
+    %h4 Peruse other bookmarks in the Blocmark system.
+  .col-md-4
+    %h4 Maintain a personal index of categorized bookmarks.
