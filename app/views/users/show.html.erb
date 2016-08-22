@@ -6,7 +6,7 @@
       <div class="media-body">
         <% @user_bookmarks.each do |bookmark| %>
           <ul>
-            <li class="thumbnail">
+            <li class="well">
               <h4><%= link_to bookmark.topic.title, topic_path(bookmark.topic) %></h4>
               <%= link_to image_tag(display("http://#{bookmark.url}"), class: "favicon"), topic_bookmark_path(bookmark.topic, bookmark) %>
               <%= link_to title("#{bookmark.url}"), topic_bookmark_path(bookmark.topic, bookmark) %>
@@ -28,19 +28,11 @@
       <div class="media-body">
         <% @liked_bookmarks.each do |bookmark| %>
           <ul>
-            <li class="thumbnail">
+            <li class="well">
               <h4><%= link_to bookmark.topic.title, topic_path(bookmark.topic) %></h4>
+              <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>
               <%= link_to image_tag(display("http://#{bookmark.url}"), class: "favicon"), topic_bookmark_path(bookmark.topic, bookmark) %>
               <%= link_to title("#{bookmark.url}"), topic_bookmark_path(bookmark.topic, bookmark) %>
-              <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>
-              <div>
-                  <% if policy(bookmark).edit? %>
-                  <%= link_to "Edit Bookmark", edit_topic_bookmark_path(bookmark.topic, bookmark), class: "btn btn-warning btn-xs" %>
-                <% end %>
-                  <% if policy(bookmark).destroy? %>
-                  <%= link_to "Delete Bookmark", [bookmark.topic, bookmark], method: :delete, class: 'btn btn-danger btn-xs', data: {confirm: 'Are you sure you want to delete this bookmark?'} %>
-                <% end %>
-              </div>
             </li>
           </ul>
           <% end %>

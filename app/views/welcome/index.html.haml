@@ -1,5 +1,5 @@
-%h1 Welcome to: Blocmarks!
-.jumbotron
+%h1 Blocmarks: Bookmark Sharing
+.jumbotron.main
   %p Feel free to create a free account and explore the world of Blocmarks.
   - if user_signed_in?
     =link_to "My Blocmarks", users_show_path, class: 'btn btn-primary btn-lg'
@@ -8,9 +8,9 @@
     =link_to "Sign Up", new_user_registration_path, class: 'btn btn-success btn-lg'
     =link_to "Sign In", new_user_session_path, class: 'btn btn-primary btn-lg'
 .row
-  .col-md-4
+  .col-md-4.feature
     %h4 Bookmark URLs via email.
-  .col-md-4
+  .col-md-4.feature
     %h4 Peruse other bookmarks in the Blocmark system.
-  .col-md-4
+  .col-md-4.feature
     %h4 Maintain a personal index of categorized bookmarks.

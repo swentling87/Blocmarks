@@ -12,18 +12,10 @@
       <div class="media-body">
         <% @topic.bookmarks.each do |link| %>
         <ul>
-          <li class="thumbnail">
+          <li class="well">
+            <%= render partial: 'likes/like', locals: { bookmark: link } %>
             <%= link_to image_tag(display("http://#{link.url}"), class: "favicon"), topic_bookmark_path(link.topic, link)  %>
             <%= link_to title("#{link.url}"), topic_bookmark_path(link.topic, link) %>
-            <%= render partial: 'likes/like', locals: { bookmark: link } %>
-            <div>
-              <% if policy(link).edit? %>
-                <%= link_to "Edit Bookmark", edit_topic_bookmark_path(link.topic, link), class: "btn btn-warning btn-xs" %>
-              <% end %>
-              <% if policy(link).destroy? %>
-                <%= link_to "Delete Bookmark", [link.topic, link], method: :delete, class: 'btn btn-danger btn-xs', data: {confirm: 'Are you sure you want to delete this bookmark?'} %>
-              <% end %>
-            </div>
           </li>
           </ul>
           <% end %>
