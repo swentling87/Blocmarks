@@ -45,7 +45,7 @@ class TopicsController < ApplicationController
   def destroy
      @topic = Topic.find(params[:id])
 
-     if @topic.destroy
+     if @topic.destroy && (@topic.bookmarks.count == 0)
        flash[:notice] = "Topic was deleted."
        redirect_to action: :index
      else

@@ -8,10 +8,7 @@
     <div class="media">
       <div class="media-body">
         <h4 class="media-heading">
-          <%= link_to topic.title, topic %> |
-          <small>
-            <%= link_to "Delete Topic", topic, method: :delete, data: { confirm: 'Are you sure you want to delete this topic?'} %>
-          </small>
+          <%= link_to topic.title, topic %>
         </h4>
           <% topic.bookmarks.each do |link| %>
           <ul>
